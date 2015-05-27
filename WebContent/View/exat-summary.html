@@ -1,0 +1,134 @@
+
+<link class="style" href="../Css/exat-summary.css" rel="stylesheet" type="text/css">
+<script type="text/javascript"> $(".YearSub").html($("#exatparamYearList").val()) ;</script>
+<script type="text/javascript"> $(".YesterdaySub").html($("#exatparamYesterday").val()) ;</script>
+
+        <div class="panel">
+            <div class="panel-body bs-docs-summary">
+                <div class="row">
+                    <div class="col-md-12" id="col-null-hidden"><p id ="Yesterday" class="text-right"><span class="YesterdaySub"></span></p></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel bs-docs-summary-card-status">
+                            <div class="panel-body ">
+                                <div class="row" style="padding-top: 15px;">
+                                    <div class="col-md-3" id="table-6-1" >&nbsp;</div>
+                                    <div class="col-md-9 hidden-md hidden-sm hidden-xs" id="table-6-1" style="padding-bottom:55px" >&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title text-center" >ข้อมูลสถานะบัตร EasyPass ปีงบประมาณ <span class="YearSubPie" ></span></h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-12">
+                                                
+                                                <p class="text-right">หมายเหตุ : แสดงเฉพาะข้อมูลปีงบประมาณ 2558 ถึง ปีงบประมาณปัจจุบัน</p>
+                                                    <div id="Chart_exat_summary_by_data_easypass" class="chart"></div>
+                                                </div>
+                                                
+                                                <div class="col-md-12">
+                                                <!-- <p class="text-danger text-right">หน่วย : ล้านใบ</p> -->
+                                                    <div id="Chart_exat_summary_by_easypass_accumulate_table" class="chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel bs-docs-summary-traffic">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4" id="table-6-1">&nbsp;</div>
+                                    <div class="col-md-8">
+                                       <!--  <p class="text-danger text-right">หน่วย : ล้านเที่ยว</p> -->
+                                        <div id="Chart_exat_summary_by_traffic_accumulate_table" class="chart"></div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title text-center " >ปริมาณจราจรแยกตามสายทาง จำแนกรายเดือน ปีงบประมาณ <span class="YearSub" ></span></h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-12">
+                                                <br>
+                                                    <div id="Chart_exat_summary_by_traffic_highway" class="chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel bs-docs-summary-sales">
+                            <div class="panel-body ">
+                                <div class="row">
+                                    <div class="col-md-4" id="table-6-1">&nbsp;</div>
+                                    <div class="col-md-8">
+                                        <!-- <p class="text-danger text-right">หมายเหตุ: จำนวนบัตร</p> -->
+                                        <div id="Chart_exat_summary_by_sales_accumulate_table" class="chart"></div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title text-center " >ยอดการจำหน่ายบัตร จำแนกรายเดือน ปีงบประมาณ <span class="YearSub" ></span></h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-12">
+                                                <br>
+                                                    <div id="Chart_exat_summary_by_sales" class="chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel bs-docs-summary-topup">
+                            <div class="panel-body ">
+                                <div class="row">
+                                    <div class="col-md-4" id="table-6-1">&nbsp;</div>
+                                    <div class="col-md-8">
+                                        <!-- <p class="text-danger text-right">หมายเหตุ: จำนวนครั้ง</p> -->
+                                        <div id="Chart_exat_summary_by_topup_accumulate_table" class="chart"></div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title text-center " >ปริมาณการเติมเงิน Easypass จำแนกรายเดือน ปีงบประมาณ <span class="YearSub" ></span></h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="col-md-12">
+                                                <br>
+                                                    <div id="Chart_exat_summary_by_topup" class="chart"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

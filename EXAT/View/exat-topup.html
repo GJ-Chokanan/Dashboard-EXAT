@@ -1,0 +1,101 @@
+<link class="style" href="../Css/exat-topup.css" rel="stylesheet" type="text/css">
+<style>
+		#Chart_exat_topup_by_point_type, #Chart_exat_topup_by_easypass_persent, #Chart_exat_topup_by_information_point_type{
+		/* width:200px;
+		height:200px;
+		margin-left:auto;
+		margin-right:auto; */
+		/*border:1px solid #cccccc;*/
+		height:450px;
+	} 
+</style>
+
+<script type="text/javascript"> $(".YearSub").html($("#exatparamYearList").val()) ;</script>
+<script type="text/javascript"> $(".MonthSub").html($("#exatparamMonthNameList").val()) ;</script>
+
+        <div class="panel" id="tabs-6">
+            <div class="panel-body bs-docs-topup">
+                <div class="row">
+                    <div class="col-md-6" id="col-null-hidden">&nbsp;</div>
+                    <div class="col-md-6">
+                        <div id="Chart_exat_topup_by_topup_accumulate_table" class="chart"></div>
+                        <!-- <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">การเติมเงินจำแนกรายช่องทางบริการและจำแนกรายปีงบประมาณ</h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_topup_by_channel_year" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ปริมาณการเติมเงิน Easypass จำแนกรายเดือน ปีงบประมาณ <span class="YearSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_topup_by_channel_month" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ยอดการเติมเงินแบ่งตามหน่วยงานภายนอก / ภายใน <dd> ของเดือน<span class="MonthSub"></span> ปีงบประมาณ <span class="YearSub"></span></dd></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_topup_by_point_type" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ยอดการเติมเงินใช้งานบัตร EasyPass แบ่งเป็น % <dd> ของเดือน<span class="MonthSub"></span> ปีงบประมาณ <span class="YearSub"></span></dd></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_topup_by_easypass_persent" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ข้อมูลการเติมเงิน ผ่านหน่วยงานภายนอก <dd> ของเดือน<span class="MonthSub"></span> ปีงบประมาณ <span class="YearSub"></span></dd>
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_topup_by_information_point_type" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

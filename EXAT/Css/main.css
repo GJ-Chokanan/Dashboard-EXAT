@@ -1,0 +1,246 @@
+
+@font-face {
+font-family:"TH SarabunIT๙";
+src: url("./font/THSarabunIT.ttf") format('truetype'),
+	url("./font/THSarabunITBold.ttf") format('truetype'),
+	url("./font/THSarabunITBoldItalic.ttf") format('truetype'),
+	url("./font/THSarabunITItalic.ttf") format('truetype');
+}
+
+		#toptext{
+        color: #fff;}
+        #col-null-hidden{
+        height: 35px;
+          //background-color: #f5f5f5;
+        }
+        
+        .section{
+          background: rgb(0,71,153); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgba(0,71,153,1) 0%, rgba(47,149,226,1) 40%, rgba(47,149,226,1) 50%, rgba(0,71,153,1) 100%, rgba(125,185,232,1) 100%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,71,153,1)), color-stop(40%,rgba(47,149,226,1)), color-stop(50%,rgba(47,149,226,1)), color-stop(100%,rgba(0,71,153,1)), color-stop(100%,rgba(125,185,232,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(0,71,153,1) 0%,rgba(47,149,226,1) 40%,rgba(47,149,226,1) 50%,rgba(0,71,153,1) 100%,rgba(125,185,232,1) 100%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(0,71,153,1) 0%,rgba(47,149,226,1) 40%,rgba(47,149,226,1) 50%,rgba(0,71,153,1) 100%,rgba(125,185,232,1) 100%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(0,71,153,1) 0%,rgba(47,149,226,1) 40%,rgba(47,149,226,1) 50%,rgba(0,71,153,1) 100%,rgba(125,185,232,1) 100%,rgba(125,185,232,1) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(0,71,153,1) 0%,rgba(47,149,226,1) 40%,rgba(47,149,226,1) 50%,rgba(0,71,153,1) 100%,rgba(125,185,232,1) 100%,rgba(125,185,232,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+        
+        }
+        #logo {
+          //display:block;
+          padding:3px;
+          background-color:#fff;
+          //color:#3B5999;
+          
+          height:100px;
+          width:150px;
+          margin:9px;
+          margin-right:2px;
+          margin-left:15px;
+          border-radius:10px;
+          box-shadow: 2px 7px 20px #2A2A2A ;
+          -webkit-box-shadow: 2px 7px 20px #2A2A2A ;
+          -moz-box-shadow: 2px 7px 20px #2A2A2A ;
+          
+        }
+       
+        .subnav {
+           margin:0;
+          top: 0px;
+          z-index: 1020;
+          background-color: rgb(247,247,247); 
+          border-bottom: 1px solid #E1E1E1;
+          padding: 0px 0px 0px 0px;
+        }
+        
+        .subnav.affix {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index:10;
+        }
+        body {
+          //background: url("../images/bg-body.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+           //color: #212327;
+    		//width: 100%;
+          color:#828282;
+          background-color:#eee;
+          font-family:TH SarabunIT๙;
+        }
+        
+        .main-param{
+          padding-top: 7px;
+          
+        }
+        .main-param .panel .panel-body{padding-bottom: 23px;}
+        .paramYear{padding-top: 7px;}
+        .paramMonth{padding-top: 7px;}
+        .paramDate{padding-top: 7px;}
+        .paramFirstDate{padding-top: 7px;}
+        .paramLastDate{padding-top: 7px;}
+        .btnSubmit{padding-top: 7px;}
+       // .main-detail{padding-top: -700px;}
+        
+		.panel-title{font-family:TH SarabunIT๙;font-size: 22px;font-weight:bold;}
+		label{font-family:TH SarabunIT๙;font-size: 22px;font-weight:bold;margin-bottom: 0px;}
+		p label{font-family:TH SarabunIT๙;font-size: 18px;font-weight:bold;}
+		.YesterdaySub{font-family:TH SarabunIT๙;font-size: 18px;font-weight:bold;}
+        /*
+        .input-group{padding-top: 7px;padding-bottom: 7px;}
+        
+        .btnSubmit{padding-top: 7px;padding-bottom: 7px;font-size: 18px;}
+        .btnSubmit input{font-size: 18px;font-weight:bold;
+           // height:40px; 
+    		//width:90px; 
+        }
+        #btnSubmit{height:35px; width:90px}
+        #Submit{padding-top: 7px;}
+        h1{
+        font-size: 50px;
+        font-weight:bold;
+        }
+        .panel-title{
+        font-size: 24px;font-weight:bold;
+        }
+        .navbar-brand{font-size: 22px;font-weight:bold;}
+        .navbar .container li{ font-size: 22px;font-weight:bold;}
+		.input-group-addon{
+        font-size: 20px;
+        //font-weight:bold;
+        }
+        .selectpicker {
+        font-size: 18px;
+        //position: relative;
+        //font-weight:bold;
+        //top: -10px;
+        }
+        .table{font-size: 18px;}
+        p{font-size: 18px;}*/
+/* ------------------------------------CSS TABLE-------------------------------------- */		
+ table {
+	background: #f5f5f5;
+	border-collapse: separate;
+	box-shadow: inset 0 1px 0 #fff;
+	font-family:TH SarabunIT๙;
+	font-size: 20px;
+	line-height: 24px;
+	//margin: 30px auto;
+	text-align: center;
+	font-weight: bold;
+	
+}	
+
+th {
+	background: url(../images/noise-diagonal.png), linear-gradient(#777, #444);
+	border-left: 1px solid #555;
+	border-right: 1px solid #777;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0 1px 0 #999;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+  	font-weight: bold;
+	padding: 10px 15px;
+	position: relative;
+	text-shadow: 0 1px 0 #000;	
+}
+
+th:after {
+	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+	content: '';
+	display: block;
+	height: 25%;
+	left: 0;
+	margin: 1px 0 0 0;
+	position: absolute;
+	top: 25%;
+	width: 100%;
+}
+
+th:first-child {
+	border-left: 1px solid #777;	
+	box-shadow: inset 1px 1px 0 #999;
+}
+
+th:last-child {
+	box-shadow: inset -1px 1px 0 #999;
+}
+
+td .td{
+	border-right: 1px solid #fff;
+	border-left: 1px solid #e8e8e8;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px 15px;
+	position: relative;
+	transition: all 300ms;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	//vertical-align: text-bottom;
+	
+}
+
+td .td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}	
+
+td .td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}	
+
+tr {
+	//background: url(../images/noise-diagonal.png);	
+}
+
+tr:nth-child(odd) td .td {
+	//background: #f1f1f1 url(../images/noise-diagonal.png);	
+}
+
+tr:last-of-type td .td {
+	box-shadow: inset 0 -1px 0 #fff; 
+}
+
+tr:last-of-type td .td:first-child {
+	box-shadow: inset 1px -1px 0 #fff;
+}	
+
+tr:last-of-type td .td:last-child {
+	box-shadow: inset -1px -1px 0 #fff;
+}	
+
+tbody:hover td .td {
+	color: transparent;
+	text-shadow: 0 0 3px #aaa;
+}
+
+tbody:hover tr:hover td .td {
+	color: #444;
+	text-shadow: 0 1px 0 #fff;
+} 
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+		/* width:540px;
+		height:350px; */
+		line-height: 1.42857;
+    	padding: 2px;
+		/*border:1px solid #cccccc;*/
+	}
+/* ------------------------------------CSS TABLE-------------------------------------- */
+/* td {	
+	padding: 0px 7px 0px 0px;
+	font-size: 20px;
+} */
+.jqplot-table-legend .jqplot-table-legend-label{	
+	padding: 0px 7px 0px 0px;
+	font-size: 20px;
+	text-align: left;
+}
+.jqplot-table-legend .jqplot-table-legend-swatch{	
+	padding: 0px 7px 0px 0px;
+	font-size: 20px;
+	
+	
+	
+}
+       

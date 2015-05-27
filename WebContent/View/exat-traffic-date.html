@@ -1,0 +1,73 @@
+<link class="style" href="../Css/exat-traffic-date.css" rel="stylesheet" type="text/css">
+
+
+
+<script type="text/javascript"> $(".StartDateSub").html($("#exatparamStartCalendar").val()) ;</script>
+<script type="text/javascript"> $(".EndDateSub").html($("#exatparamEndCalendar").val()) ;</script>
+<script type="text/javascript"> $(".YesterdaySub").html($("#exatparamYesterday").val()) ;</script>
+
+
+
+        <div class="panel" id="tabs-6">
+            <div class="panel-body bs-docs-traffic-date">
+                <div class="row">
+                    <div class="col-md-8" id="col-null-hidden">&nbsp;</div>
+                    <div class="col-md-4">
+                    	<p id ="Yesterday" class="text-right"><span class="YesterdaySub"></span></p>
+                        <div id="Chart_exat_traffic_date_by_traffic_accumulate_table" class="chart"></div>
+                        <!-- <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>ปริมาณจราจรสะสม (เที่ยว)</th>
+                                    <th>ปริมาณจราจรเฉลี่ยต่อวัน (เที่ยว)</th>
+                                </tr>
+                            </thead>
+                        </table> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ปริมาณจราจรสะสมรายวัน ตั้งแต่วันที่ <span class="StartDateSub"></span> ถึง <span class="EndDateSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_traffic_date_by_highway_accumulate" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ปริมาณจราจรเฉลี่ยรายวัน ตั้งแต่วันที่ <span class="StartDateSub"></span> ถึง <span class="EndDateSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_traffic_date_by_highway_average" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ปริมาณจราจรเฉลี่ยรายชั่วโมง ตั้งแต่วันที่ <span class="StartDateSub"></span> ถึง <span class="EndDateSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_traffic_date_by_average_hourly" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  

@@ -1,0 +1,100 @@
+
+<link class="style" href="../Css/exat-inventory.css" rel="stylesheet" type="text/css">
+<style>
+		/* #Chart_exat_traffic_year_by_highway{
+		 width:200px;
+		height:200px;
+		margin-left:auto;
+		margin-right:auto; 
+		border:1px solid #cccccc;
+	}  */
+	 #Chart_exat_inventory_by_status_easypass_table{
+		padding-top: 7px;
+	}  
+	 .table .fixtd > thead > tr > th, .table .fixtd > tbody > tr > th, .table .fixtd > tfoot > tr > th, .table .fixtd > thead > tr > td, .table .fixtd > tbody > tr > td, .table .fixtd > tfoot > tr > td{
+		/* width:540px;
+		height:350px; */
+		line-height: 1.42857;
+    	padding: 7px;
+		/*border:1px solid #cccccc;*/
+	}
+	
+	#Chart_exat_inventory_by_status_easypass{
+		height:360px;
+	}
+</style>
+<script type="text/javascript"> $(".YesterdaySub").html($("#exatparamYesterday").val()) ;</script>
+<script type="text/javascript"> $(".YearSub").html($("#exatparamYearList").val()) ;</script>
+        <div class="panel" id="tabs-6">
+            <div class="panel-body bs-docs-inventory">
+                <div class="row">
+                    <div class="col-md-8" id="col-null-hidden">&nbsp;</div>
+                    <div class="col-md-4">
+                    <p id ="Yesterday" class="text-right"><span class="YesterdaySub"></span></p>
+                    
+                        <div id="Chart_exat_inventory_by_inventory_accumulate_table" class="chart"></div>
+                        <!-- <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">สถานะบัตร ปีงบประมาณ <span class="YearSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-7">
+                                    <div id="Chart_exat_inventory_by_status_easypass" class="chart"></div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div id="Chart_exat_inventory_by_status_easypass_table" class="chart">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">ยอดบัตรคงคลัง ปีงบประมาณ <span class="YearSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <br>
+                                <br>
+                                <div id="Chart_exat_inventory_by_inventory_easypass" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center ">การคืนบัตรแยกตามสายทาง ประจำปีงบประมาณ <span class="YearSub"></span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <br>
+                                <div id="Chart_exat_inventory_by_return_easypass" class="chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
