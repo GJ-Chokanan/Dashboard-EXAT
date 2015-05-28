@@ -8,6 +8,40 @@ $(document).ready(function(){
 		});
 	};
 	
+	var ScreenCaptures = function(){
+		//var system = require('system');
+		 
+		// Web Address (URL) of the page to capture
+		var url  = "http://localhost:8180/exat/View/index.html";
+		 
+		// File name of the captured image
+		var file = "DashBoard"  + ".png";
+		 
+		var page = require('webpage').create();
+		 
+		// Browser size - height and width in pixels
+		// Change the viewport to 480x320 to emulate the iPhone
+		page.viewportSize = { width: 1200, height : 800 };
+		 
+		// Set the User Agent String 
+		// You can change it to iPad or Android for mobile screenshots
+		page.settings.userAgent = "Chrome/41.0.2272.76 Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.5 (KHTML, like Gecko) Safari/536.5";
+		 
+		// Render the screenshot image
+		page.open ( url, function ( status ) {
+		  if ( status !== "success") {
+		       console.log("Could not open web page : " + url);
+		       phantom.exit();
+		   } else {
+		       window.setTimeout ( function() {
+		          page.render(file);
+		          console.log("Download the screenshot : " + file);
+		          phantom.exit();
+		       }, 30000);
+		   }
+		});
+	};
+	
 	var option = new Array();
 	
 // -------------tabs-1.html-------------
@@ -399,7 +433,7 @@ $(document).ready(function(){
 			            option['numberRows']='2';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            option['maxY']=true;
+			            //option['maxY']=true;
 						option['labelY']= 'หน่วย : ครั้ง';
 						option['angle']='-45';
 			                     lineChart("Chart_exat_summary_by_topup",data,option);

@@ -143,7 +143,7 @@ $(document).ready(function(){
 			            option['numberRows']='2';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            option['maxY']=true;
+			            //option['maxY']=true;
 						option['labelY']= 'หน่วย : ครั้ง';
 						option['angle']='-45';
 			                     lineChart("Chart_exat_topup_by_channel_year",data,option);
@@ -201,7 +201,7 @@ $(document).ready(function(){
 					url: "../Model/Topup/topup_by_channel_month.jsp",
 					type: "get",
 					dataType: "json",
-					data:{"paramYear":$("#exatparamYearList").val()},
+					data:{"paramYear":arparamYear},
 					success:function(data){
 						if(data != ""){
 							$("#Chart_exat_topup_by_channel_month").css({"margin-top":"40px","padding-bottom":"0px"});
@@ -235,7 +235,7 @@ $(document).ready(function(){
 			            option['numberRows']='2';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            option['maxY']=true;
+			            //option['maxY']=true;
 						option['labelY']= 'หน่วย : ครั้ง';
 						option['angle']='-45';
 		                     lineChart("Chart_exat_topup_by_channel_month",data,option);

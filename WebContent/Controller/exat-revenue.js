@@ -320,7 +320,7 @@ $(document).ready(function(){
 			            option['numberRows']='1';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            option['maxY']=true;
+			            //option['maxY']=true;
 						option['labelY']= 'หน่วย : บาท';
 						option['angle']='-45';
 		                     lineChart("Chart_exat_revenue_by_revenue_vs_sales",data,option);
