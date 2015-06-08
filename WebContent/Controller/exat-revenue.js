@@ -142,7 +142,7 @@ $(document).ready(function(){
 			            option['numberRows']='2';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            option['maxY']=true;
+			            //option['maxY']=true;
 						option['labelY']= 'หน่วย : ล้านบาท';
 						option['angle']='-45';
 		                     lineChart("Chart_exat_revenue_by_highway_accumulate",data,option);
@@ -234,7 +234,7 @@ $(document).ready(function(){
 			            option['numberRows']='2';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            option['maxY']=true;
+			            //option['maxY']=true;
 						option['labelY']= 'หน่วย : บาท';
 						option['angle']='-45';
 		                     lineChart("Chart_exat_revenue_by_highway_average",data,option);
@@ -320,7 +320,7 @@ $(document).ready(function(){
 			            option['numberRows']='1';
 			            option['clickable']=true;
 			            option['tooltip']=true;
-			            //option['maxY']=true;
+			           // option['maxY']=true;
 						option['labelY']= 'หน่วย : บาท';
 						option['angle']='-45';
 		                     lineChart("Chart_exat_revenue_by_revenue_vs_sales",data,option);

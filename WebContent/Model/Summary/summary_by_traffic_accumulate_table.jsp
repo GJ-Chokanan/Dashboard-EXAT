@@ -4,20 +4,13 @@
 
 		String paramYear = request.getParameter("paramYear");
 		//String paramYear = "2559";
-		String query=" Select Round(Sum(No_Of_Traffic_This_Year)) as No_Of_Traffic_This_Year "+
-				" ,round(Sum(No_Of_Traffic_This_Year)/countdatebyyear) As AVG_No_Of_Traffic_This_Year "+
-				" From Fact_Monthly_Traffic Fmt "+
-				" Left Join Dim_Date Ddm On Ddm.Date_Key = Fmt.Month_Key "+
-				" Left Join Dim_Plaza Dpza On Dpza.Plaza_Key = Fmt.Usage_Plaza_Key "+
-				" Left Join ( "+
-				" Select Buddhist_Fiscal_Year "+
-				" ,count(Calendar_Date) as countdatebyyear "+
-				" From Dim_Date "+
-				" where Buddhist_Fiscal_Year = '"+paramYear+"' "+
-				" Group By Buddhist_Fiscal_Year "+
-				" )Ddd on Ddd.Buddhist_Fiscal_Year = Ddm.Buddhist_Fiscal_Year "+
-				" Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' "+
-				" Group By Ddm.Buddhist_Fiscal_Year,countdatebyyear ";
+		String query=" Select Round(Sum(No_Of_Traffic_This_Year)) As No_Of_Traffic_This_Year "+
+						" ,Round(Sum(No_Of_Traffic_This_Year)/(Select Count(Distinct fdt.Date_Key) From Fact_Daily_Traffic fdt Left Join Dim_Date Ddm On Ddm.Date_Key = Fdt.Date_Key Where Ddm.Buddhist_Fiscal_Year <= '"+paramYear+"')) As AVG_No_Of_Traffic_This_Year "+
+						" From Fact_Monthly_Traffic Fmt "+
+						" Left Join Dim_Date Ddm On Ddm.Date_Key = Fmt.Month_Key "+
+						" Where Ddm.Buddhist_Fiscal_Year <= '"+paramYear+"' "+
+						" and Fmt.Usage_Plaza_Key != '1' "+
+						" group by 1 ";
 		String columns="1,2";
 		
 		

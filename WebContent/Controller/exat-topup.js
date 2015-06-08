@@ -319,6 +319,8 @@ $(document).ready(function(){
 							 option['themeCustom']=["#24C0F1","#9564E2"];
 							  option['showDataLabels']=true;
 							  //option['dataLabelPositionFactor']='1.1';
+							  //option['location']='n';option['numberRows']='1';
+							  
 							  option['tooltip']=true;
 							  pieChart("Chart_exat_topup_by_point_type",data,option);	
 						}else{
@@ -349,6 +351,7 @@ $(document).ready(function(){
 							  option['themeCustom']=["#4bb2c5","#eaa228","#c5b47f","#579575","#839557","#958c12","#953579","#4b5de4","#d8b83f","#ff5800","#0085cc"];
 							  option['showDataLabels']=true;
 							  //option['dataLabelPositionFactor']='1.1';
+							  //option['paddingRight']='100';
 							  option['tooltip']=true;
 							  pieChart("Chart_exat_topup_by_easypass_persent",data,option);	
 						}else{

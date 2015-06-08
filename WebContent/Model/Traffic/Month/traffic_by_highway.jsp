@@ -11,12 +11,11 @@
 				" Select Ddm.BUDDHIST_SHORT_DATE ,Case When Highway_Code = '06' Then 'กาญจนาภิเษก'else Substr(Highway_Name,12) 	End As Highway_Name , "+
 				"  Sum(No_Of_Traffic_This_Year) as No_Of_Traffic_This_Year ,HIGHWAY_CODE ,Fiscal_Month_No From Fact_Monthly_Traffic Fmt "+
 				"  Left Join Dim_Date Ddm On Ddm.Date_Key = Fmt.Month_Key Left Join Dim_Plaza Dpza On Dpza.Plaza_Key = Fmt.Usage_Plaza_Key "+
-				"  Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' AND (Ddm.FISCAL_MONTH_NO in '"+paramMonth+"' or 'All' in '"+paramMonth+"') Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE,Highway_Name,Highway_Code union Select Ddm.Buddhist_Short_Date "+
+				"  Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' AND (Ddm.FISCAL_MONTH_NO in '"+paramMonth+"' or 'All' in '"+paramMonth+"') and (Highway_Code != '00') Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE,Highway_Name,Highway_Code union Select Ddm.Buddhist_Short_Date "+
 				"  ,'รวมทุกสายทาง' as Highway_Name ,Sum(No_Of_Traffic_This_Year) As No_Of_Traffic_This_Year ,'99' As Highway_Code ,Fiscal_Month_No From Fact_Monthly_Traffic Fmt  "+
 				"  Left Join Dim_Date Ddm On Ddm.Date_Key = Fmt.Month_Key Left Join Dim_Plaza Dpza On Dpza.Plaza_Key = Fmt.Usage_Plaza_Key "+
-				"  Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' AND (Ddm.FISCAL_MONTH_NO in '"+paramMonth+"' or 'All' in '"+paramMonth+"') Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE  "+
+				"  Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' AND (Ddm.FISCAL_MONTH_NO in '"+paramMonth+"' or 'All' in '"+paramMonth+"') and (Highway_Code != '00') Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE  "+
 				"  ) E "+
-				"  WHERE Highway_Name IS NOT NULL "+
 				"  order by HIGHWAY_CODE,Fiscal_Month_No ";
 				
 		String columns="1,2,3";

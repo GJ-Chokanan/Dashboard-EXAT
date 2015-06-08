@@ -6,16 +6,26 @@
 		String paramMonth = request.getParameter("paramMonth");
 
 		//String paramYear = "2559";
-		String query=" Select Round(Sum(No_Of_Traffic_This_Year)) As No_Of_Traffic_This_Year  "+
-				" ,Case When Sum(No_Of_Traffic_Last_Year) = 0 Then 0 Else Round(((Sum(No_Of_Traffic_This_Year)-Sum(No_Of_Traffic_Last_Year))/Sum(No_Of_Traffic_Last_Year)) * 100,2) End As This_Last "+
-		
-				" ,round(Sum(No_Of_Traffic_This_Year)/countdatebyyear) As AVG_No_Of_Traffic_This_Year  "+
-				" From Fact_Monthly_Traffic Fmt "+
-				" Left Join Dim_Date Ddm On Ddm.Date_Key = Fmt.Month_Key "+
-				" Left Join Dim_Plaza Dpza On Dpza.Plaza_Key = Fmt.Usage_Plaza_Key Left Join "+
-				" ( Select Buddhist_Fiscal_Year ,count(Calendar_Date) as countdatebyyear From Dim_Date "+
-				" Where Buddhist_Fiscal_Year = '"+paramYear+"' And (Fiscal_Month_No In '"+paramMonth+"' Or 'All' In '"+paramMonth+"') Group By Buddhist_Fiscal_Year )Ddd On Ddd.Buddhist_Fiscal_Year = Ddm.Buddhist_Fiscal_Year "+
-				" Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' AND (Ddm.FISCAL_MONTH_NO in '"+paramMonth+"' or 'All' in '"+paramMonth+"') Group By countdatebyyear ";
+		String query=" Select No_Of_Traffic_This_Year "+
+						" ,Case When No_Of_Traffic_Last_Year = 0 Then 0 Else Round(((No_Of_Traffic_This_Year - No_Of_Traffic_Last_Year)/No_Of_Traffic_Last_Year)*100,2) End As This_Last "+
+						" ,Round(No_Of_Traffic_This_Year/days) as AVGTY "+
+						" From( "+
+						" Select Sum(No_Of_Traffic_This_Year) As No_Of_Traffic_This_Year "+
+						" ,Sum(No_Of_Traffic_Last_Year) As No_Of_Traffic_Last_Year "+
+						" ,(Select Count(Distinct fdt.Date_Key) "+
+						" From Fact_Daily_Traffic fdt "+
+						" Left Join Dim_Date Ddm On Ddm.Date_Key = fdt.Date_Key "+
+						" Where Ddm.Buddhist_Fiscal_Year <= '"+paramYear+"' "+
+						" and (Fiscal_Month_No in '"+paramMonth+"' or 'All' in '"+paramMonth+"') "+
+						" and Fdt.Usage_Plaza_Key != '1' "+
+						" ) as days "+
+						" From Fact_Monthly_Traffic Fmt "+
+						" Left Join Dim_Date Ddm On Ddm.Date_Key = Fmt.Month_Key "+
+						" Where Ddm.Buddhist_Fiscal_Year <= '"+paramYear+"' "+
+						" And (Fiscal_Month_No in '"+paramMonth+"' or 'All' in '"+paramMonth+"') "+
+						" and Fmt.Usage_Plaza_Key != '1' "+
+						" Group By 1,2 "+
+						" )tab ";
 		String columns="1,2,3";
 		
 		

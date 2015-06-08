@@ -4,18 +4,34 @@
 
 		String paramYear = request.getParameter("paramYear");
 		//String paramYear = "2559";
-		String query=" Select Replace(Buddhist_Short_Date,Substr(Buddhist_Short_Date,-3,3),'') ,Highway_Name ,Round(Sales_Amount) From ( SELECT Ddm.BUDDHIST_SHORT_DATE "+
-				" ,Case When Highway_Code = '06' Then 'กาญจนาภิเษก' else Substr(Highway_Name,12) 	End As Highway_Name  ,Sum(Sales_Amount)/countdatebyyear As Sales_Amount ,Highway_Code "+
-				" ,Ddm.Fiscal_Month_No From Fact_Sales Fs Left Join Dim_Date Ddm On Ddm.Date_Key = Fs.Date_Key Left Join Dim_Plaza Dpza On Dpza.Plaza_Key = Fs.PLAZA_KEY Left Join ( Select Buddhist_Fiscal_Year "+
-				" ,FISCAL_MONTH_NO ,count(Calendar_Date) as countdatebyyear From Dim_Date "+
-				" Where Buddhist_Fiscal_Year = '"+paramYear+"' Group By Buddhist_Fiscal_Year,FISCAL_MONTH_NO )Ddd On Ddd.Buddhist_Fiscal_Year = Ddm.Buddhist_Fiscal_Year and Ddd.FISCAL_MONTH_NO = Ddm.FISCAL_MONTH_NO "+
-				" Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE,Highway_Name,Highway_Code,countdatebyyear union Select Ddm.Buddhist_Short_Date "+
-				" ,'รวมทุกสายทาง' As Highway_Name ,Sum(Sales_Amount)/countdatebyyear As Sales_Amount ,'99' As Highway_Code ,Ddm.Fiscal_Month_No From Fact_Sales Fs Left Join Dim_Date Ddm On Ddm.Date_Key = Fs.Date_Key Left Join ( "+
-				" Select Buddhist_Fiscal_Year ,FISCAL_MONTH_NO ,count(Calendar_Date) as countdatebyyear From Dim_Date "+
-				" Where Buddhist_Fiscal_Year = '"+paramYear+"' Group By Buddhist_Fiscal_Year,FISCAL_MONTH_NO )Ddd On Ddd.Buddhist_Fiscal_Year = Ddm.Buddhist_Fiscal_Year and Ddd.FISCAL_MONTH_NO = Ddm.FISCAL_MONTH_NO "+
-				" Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' Group By Ddm.Fiscal_Month_No,Ddm.Buddhist_Short_Date,Countdatebyyear )E "+
-				" WHERE Highway_Name IS NOT NULL "+
-				" order by Highway_Code,Fiscal_Month_No ";
+		String query=" Select Replace(Buddhist_Short_Date,Substr(Buddhist_Short_Date,-3,3),'') "+
+						" ,Highway_Name "+
+						" ,Round(Sales_Amount) "+
+						" From( "+
+						" SELECT Ddm.BUDDHIST_SHORT_DATE "+
+						" ,Case When Highway_Code = '06' Then 'กาญจนาภิเษก' else Substr(Highway_Name,12)  End As Highway_Name "+
+						" ,Sum(Sales_Amount) As Sales_Amount "+
+						" ,Highway_Code "+
+						" ,Ddm.Fiscal_Month_No "+
+						" From Fact_Sales Fs "+
+						" Left Join Dim_Date Ddm On Ddm.Date_Key = Fs.Date_Key "+
+						" Left Join Dim_Plaza Dpza On Dpza.Plaza_Key = Fs.PLAZA_KEY "+
+						" Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' "+
+						" and Fs.PLAZA_KEY != '1' "+
+						" Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE,Highway_Name,Highway_Code "+
+						" union "+
+						" Select Ddm.Buddhist_Short_Date "+
+						" ,'รวมทุกสายทาง' As Highway_Name "+
+						" ,Sum(Sales_Amount) As Sales_Amount "+
+						" ,'99' as Highway_Code "+
+						" ,Ddm.Fiscal_Month_No "+
+						" From Fact_Sales Fs "+
+						" Left Join Dim_Date Ddm On Ddm.Date_Key = Fs.Date_Key "+
+						" Where Ddm.Buddhist_Fiscal_Year = '"+paramYear+"' "+
+						" And Fs.Plaza_Key != '1' "+
+						" Group By Ddm.Fiscal_Month_No,Ddm.BUDDHIST_SHORT_DATE "+
+						" )E "+
+						" order by Highway_Code,Fiscal_Month_No ";
 
 		String columns="1,2,3";
 		
